@@ -1,0 +1,29 @@
+---
+import { Icon } from "astro-icon/components";
+import ContentSection from "../content-section.astro";
+---
+
+<ContentSection title="UAP5" id="intro">
+  <Icon slot="eyebrow" name="intro" class="size-32" />
+  <Fragment slot="lead">
+    Простір з ідеальними умовами для <span class="text-primary">розкриття
+  </span> власного творчого потенціалу в середовищі <span class="text-primary">виживання</span>
+  </Fragment>
+  <div class="grid grid-cols-1 gap-2 sm:grid-cols-2">
+    <a
+      href="/wiki"
+      class="flex items-center justify-center gap-3 border-2 rounded-3xl px-6 py-4"
+    >
+      <Icon name="mdi:telescope" class="size-8" />
+      <span>Вікіпедія</span>
+    </a>
+    <a
+      href="/form"
+      class="flex items-center justify-center gap-3 border-2 rounded-3xl px-6 py-4"
+    >
+      <Icon name="mdi:gamepad" class="size-8" />
+      <span>Почати гру</span>
+    </a>
+  </div>
+  <p>1.21 · Minecraft: Java Edition · Ліцензія не обов’язкова</p>
+</ContentSection>

@@ -1,0 +1,44 @@
+---
+import {Icon} from 'astro-icon/components';
+import {twMerge} from 'tailwind-merge';
+
+const {
+    variant = 'secondary',
+    target,
+    text = Astro.slots.render('default'),
+    icon = '',
+    class: className = '',
+    type,
+    ...rest
+} = Astro.props;
+
+// Define styles for each variant using Tailwind CSS utility classes.
+const variants = {
+    primary: 'bg-blue-500 text-white border border-blue-500 hover:bg-blue-600 hover:border-blue-600',
+    secondary: 'bg-gray-500 text-white border border-gray-500 hover:bg-gray-600 hover:border-gray-600',
+    tertiary: 'bg-green-500 text-white border border-green-500 hover:bg-green-600 hover:border-green-600',
+    link: 'text-blue-500 border border-transparent hover:text-blue-600 hover:border-blue-600 cursor-pointer',
+};
+---
+
+{
+    type === 'button' || type === 'submit' || type === 'reset' ? (
+    <button type={type} class={twMerge('custom-rounded px-4 py-2 transition-all', variants[variant] || '', className)}
+            {...rest}>
+        <Fragment set:html={text}/>
+        {icon &&
+                <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block"/>}
+    </button>
+        ) : (
+    <a
+            class={twMerge('rounded-3xl px-6 py-3 transition-all', variants[variant] || '', className)}
+            {...(target ? { target: target, rel: 'noopener noreferrer' } : {})}
+            {...rest}
+    >
+        <Fragment set:html={text}/>
+        {icon &&
+                <Icon name={icon} class="w-5 h-5 ml-1 -mr-1.5 rtl:mr-1 rtl:-ml-1.5 inline-block"/>}
+    </a>
+        )
+    }
+

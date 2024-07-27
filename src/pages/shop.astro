@@ -1,0 +1,233 @@
+---
+import "@fontsource-variable/inter";
+import Footer from "../components/landing/footer.astro";
+import Header from "../components/shop/header.astro";
+import Prices from "../components/shop/pricing.astro";
+import "~/styles/index.css";
+
+const {generator, site} = Astro;
+const description =
+    "Унікальний український Minecraft сервер";
+---
+
+<!doctype html>
+<html lang="en" class="h-full motion-safe:scroll-smooth" data-theme="dark">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width"/>
+    <link rel="icon" href="/favicon.svg" type="image/png"/>
+    <meta name="generator" content={generator}/>
+
+    <title>UAProject | Крамниця</title>
+    <meta name="description" content={description}/>
+
+    <!-- social media -->
+    <meta property="og:title" content="UAProject"/>
+    <meta property="og:type" content="website"/>
+    <meta property="og:description" content={description}/>
+    <meta property="og:url" content={site}/>
+    <meta name="twitter:card" content="summary_large_image"/>
+
+    <!-- initialize theme -->
+    <script is:inline>
+        const themeSaved = localStorage.getItem("theme");
+
+        if (themeSaved) {
+            document.documentElement.dataset.theme = themeSaved;
+        } else {
+            const prefersDark = window.matchMedia(
+                "(prefers-color-scheme: dark)",
+            ).matches;
+            document.documentElement.dataset.theme = prefersDark ? "dark" : "light";
+        }
+
+        window
+            .matchMedia("(prefers-color-scheme: dark)")
+            .addEventListener("change", (event) => {
+                if (!localStorage.getItem("theme")) {
+                    document.documentElement.dataset.theme = event.matches
+                        ? "dark"
+                        : "light";
+                }
+            });
+    </script>
+</head>
+<body
+        class="h-full overflow-x-hidden bg-default text-default text-base selection:bg-secondary selection:text-white"
+>
+<Header/>
+<div class="<space-y-5></space-y-5> px-8 py-32">
+    <Prices
+            title="Крамниця 💵"
+            subtitle="Хочете підтримати проєкт та отримати приємнощі?"
+            prices={[
+                {
+                    title: 'Допуск',
+                    imageUrl: 'https://media.discordapp.net/attachments/1143545807451213915/1259939893262422077/vitania.png?ex=66a5e5b7&is=66a49437&hm=be379109d4f7f23a8adff9a926c53b3f1f0385cd16de213c440a4a5630826166&=&format=webp&quality=lossless&width=1440&height=450',
+                    subtitle: '"Прохідка" на сервер',
+                    price: 50,
+                    period: 'один раз на сезон',
+                    items: [
+                        {
+                            description: 'Пропуск на сервер',
+                        },
+                        {
+                            description: 'Роль гравця у Discord',
+                        },
+                        {
+                            description: 'Автоматична видача',
+                        }
+                    ],
+                    callToAction: {
+                        target: '_blank',
+                        text: 'Придбати',
+                        href: 'https://donatello.to/fyzzzen?a=50&c=&m=Graylist',
+                    },
+                },
+                {
+                    title: 'Wealth-1',
+                    imageUrl: 'https://media.discordapp.net/attachments/1221552844713234583/1266712490251653130/wealth.png?ex=66a62570&is=66a4d3f0&hm=5daea7f2d737388bd2d49ee5b056d49a0827bcd2fe4218b5ad5d362e04210812&=&format=webp&quality=lossless&width=1440&height=450',
+                    subtitle: 'Спонсорська підписка',
+                    price: 50,
+                    period: 'щомісяця',
+                    items: [
+                        {
+                            description: 'Власне місто до 255 чанків',
+                        },
+                        {
+                            description: 'Один новачок раз на місяць',
+                        },
+                        {
+                            description: 'П\'ять магічного пилу щоденно',
+                        },
+                    ],
+                    callToAction: {
+                        target: '_blank',
+                        text: 'Придбати',
+                        href: 'https://donatello.to/fyzzzen?a=50&c=&m=Wealth-1',
+                    },
+                    hasRibbon: true,
+                    ribbonTitle: 'top',
+                },
+                {
+                    title: 'Wealth-2',
+                    subtitle: 'Спонсорська підписка',
+                    imageUrl: 'https://media.discordapp.net/attachments/1221552844713234583/1266712490251653130/wealth.png?ex=66a62570&is=66a4d3f0&hm=5daea7f2d737388bd2d49ee5b056d49a0827bcd2fe4218b5ad5d362e04210812&=&format=webp&quality=lossless&width=1440&height=450',
+                    price: 100,
+                    period: 'щомісяця',
+                    items: [
+                        {
+                            description: 'Власне місто до 512 чанків',
+                        },
+                        {
+                            description: 'Два новачки раз на місяць',
+                        },
+                        {
+                            description: 'Вісім магічного пилу щоденно',
+                        },
+                    ],
+                    callToAction: {
+                        target: '_blank',
+                        text: 'Придбати',
+                        href: 'https://donatello.to/fyzzzen?a=100&c=&m=Wealth-2',
+                    },
+                },
+                {
+                    title: 'Wealth-3',
+                    subtitle: 'Спонсорська підписка',
+                    imageUrl: 'https://media.discordapp.net/attachments/1221552844713234583/1266712490251653130/wealth.png?ex=66a62570&is=66a4d3f0&hm=5daea7f2d737388bd2d49ee5b056d49a0827bcd2fe4218b5ad5d362e04210812&=&format=webp&quality=lossless&width=1440&height=450',
+                    price: 150,
+                    period: 'щомісяця',
+                    items: [
+                        {
+                            description: 'Власне місто до 812 чанків',
+                        },
+                        {
+                            description: 'Три новачки раз на місяць',
+                        },
+                        {
+                            description: 'Десять магічного пилу щоденно',
+                        },
+                    ],
+                    callToAction: {
+                        target: '_blank',
+                        text: 'Придбати',
+                        href: 'https://donatello.to/fyzzzen?a=150&c=&m=Wealth-3',
+                    },
+                },
+                {
+                    title: 'Wealth-4',
+                    subtitle: 'Спонсорська підписка',
+                    imageUrl: 'https://media.discordapp.net/attachments/1221552844713234583/1266712490251653130/wealth.png?ex=66a62570&is=66a4d3f0&hm=5daea7f2d737388bd2d49ee5b056d49a0827bcd2fe4218b5ad5d362e04210812&=&format=webp&quality=lossless&width=1440&height=450',
+                    price: 300,
+                    period: 'щомісяця',
+                    items: [
+                        {
+                            description: 'Власне місто до 1024 чанків',
+                        },
+                        {
+                            description: 'Три новачки раз на місяць',
+                        },
+                        {
+                            description: 'П\'ятнадцять магічного пилу щоденно',
+                        },
+                    ],
+                    callToAction: {
+                        target: '_blank',
+                        text: 'Придбати',
+                        href: 'https://donatello.to/fyzzzen?a=300&c=&m=Wealth-4',
+                    },
+                },
+                /** {
+                    title: 'Іконка',
+                    subtitle: 'Власна іконка на сервері',
+                    price: 50,
+                    period: 'один раз на сезон',
+                    items: [
+                        {
+                            description: 'Будь-яка іконка розміром до 16х16',
+                        },
+                        {
+                            description: 'Обрана вами іконка у списку гравців (TAB)',
+                        },
+                        {
+                            description: 'Обрана вами іконка у ігровому чаті',
+                        },
+                    ],
+                    callToAction: {
+                        target: '_blank',
+                        text: 'Придбати',
+                        href: 'https://donatello.to/fyzzzen?a=20&c=&m=Icon',
+                    },
+                },/**/
+                {
+                    title: 'Роль міста',
+                    imageUrl: 'https://media.discordapp.net/attachments/1221552844713234583/1266712489802993714/town-roles.png?ex=66a6256f&is=66a4d3ef&hm=ee10c9faacedf02a5b1898fa6211ee5fc7ad990a70b7c1de9497528c03b07131&=&format=webp&quality=lossless&width=1440&height=450',
+                    subtitle: 'Окрема роль міста у Discord',
+                    price: 50,
+                    period: 'один раз на сезон / 5 учасників',
+                    items: [
+                        {
+                            description: 'Будь-яка іконка для ролі у Discord',
+                        },
+                        {
+                            description: 'Будь-яка назва для ролі у Discord',
+                        },
+                        {
+                            description: 'Будь-який колір для ролі у Discord',
+                        },
+                    ],
+                    callToAction: {
+                        target: '_blank',
+                        text: 'Придбати',
+                        href: 'https://donatello.to/fyzzzen?a=50&c=&m=Town-Role',
+                    },
+                    hasRibbon: true,
+                    ribbonTitle: 'new',
+                },
+            ]}
+    />
+</div>
+<Footer/>
+</body>
+</html>
