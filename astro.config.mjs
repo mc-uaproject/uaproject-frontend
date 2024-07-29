@@ -3,9 +3,14 @@ import react from '@astrojs/react';
 import icon from "astro-icon";
 import {defineConfig} from "astro/config";
 import starlight from '@astrojs/starlight';
+import node from '@astrojs/node';
 
 // https://astro.build/config
 export default defineConfig({
+    output: 'server',
+    adapter: node({
+        mode: 'middleware',
+    }),
     integrations: [react(), tailwind(), icon(), starlight({
         title: 'Вікіпедія',
         locales: {

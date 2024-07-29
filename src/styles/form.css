@@ -1,0 +1,93 @@
+.form-container {
+    max-width: 90%;
+    margin: 0 auto;
+    padding: 20px;
+    /*background: var(--color-background);*/
+    color: var(--color-text);
+    border-radius: 10px;
+    box-shadow: 0 2px 4px var(--color-border);
+}
+
+.has-error .input-error {
+    border-color: #e23636;
+}
+
+.loading-wheel {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 20vh;
+    width: 100%;
+}
+
+.loading-spinner {
+    width: 3rem;
+    height: 3rem;
+    border: 6px solid rgba(0, 0, 0, 0.1);
+    border-radius: 50%;
+    border-top: 4px solid #3498db;
+    animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+.error-text {
+    color: #e23636;
+}
+
+.form-group.inline {
+    display: inline-block;
+    width: 48%;
+    margin-right: 4%;
+}
+
+.form-group-inline {
+    display: flex;
+    justify-content: space-between;
+}
+
+.form-group-inline .form-group {
+    width: 48%;
+    margin-right: 0;
+}
+
+label {
+    display: block;
+    margin-top: 2px;
+    margin-bottom: 5px;
+    color: var(--color-text-offset);
+}
+
+input,
+textarea,
+select {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid var(--color-border);
+    border-radius: 5px;
+    background-color: var(--color-background-offset);
+    color: var(--color-text);
+}
+
+button {
+    display: block;
+    width: 100%;
+    padding: 10px;
+    background: var(--color-primary);
+    color: var(--color-text);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background: var(--color-secondary);
+}
