@@ -1,65 +1,29 @@
 .form-container {
-    max-width: 90%;
+    max-width: 80%;
     margin: 0 auto;
     padding: 20px;
-    /*background: var(--color-background);*/
+    background: var(--color-background);
     color: var(--color-text);
     border-radius: 10px;
     box-shadow: 0 2px 4px var(--color-border);
 }
 
-.has-error .input-error {
-    border-color: #e23636;
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 20px;
 }
 
-.loading-wheel {
+.form-item {
     display: flex;
-    align-items: center;
-    justify-content: center;
-    height: 20vh;
-    width: 100%;
+    flex-direction: column;
 }
 
-.loading-spinner {
-    width: 3rem;
-    height: 3rem;
-    border: 6px solid rgba(0, 0, 0, 0.1);
-    border-radius: 50%;
-    border-top: 4px solid #3498db;
-    animation: spin 1s linear infinite;
-}
-
-@keyframes spin {
-    0% {
-        transform: rotate(0deg);
-    }
-    100% {
-        transform: rotate(360deg);
-    }
-}
-
-.error-text {
-    color: #e23636;
-}
-
-.form-group.inline {
-    display: inline-block;
-    width: 48%;
-    margin-right: 4%;
-}
-
-.form-group-inline {
-    display: flex;
-    justify-content: space-between;
-}
-
-.form-group-inline .form-group {
-    width: 48%;
-    margin-right: 0;
+.full-width {
+    grid-column: span 2; /* Adjust based on how many columns you want it to span */
 }
 
 label {
-    display: block;
     margin-top: 2px;
     margin-bottom: 5px;
     color: var(--color-text-offset);
@@ -76,9 +40,15 @@ select {
     color: var(--color-text);
 }
 
+.large-input {
+    height: 100px;
+}
+
 button {
-    display: block;
+    grid-column: span 2; /* Make the button span across the grid columns */
     width: 100%;
+    height: 60px;
+    margin-top: 30px;
     padding: 10px;
     background: var(--color-primary);
     color: var(--color-text);
@@ -87,6 +57,27 @@ button {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
+
+/*.modal-overlay {*/
+/*    z-index: 9999;*/
+/*    width: 100vw;*/
+/*    height: 100vh;*/
+/*    position: absolute;*/
+/*    top: 0;*/
+/*    background: rgba(0, 0, 0, 0.7);*/
+/*    display: flex;*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*}*/
+
+/*.modal-box {*/
+/*    display: block;*/
+/*    background: white;*/
+/*    width: 70%;*/
+/*    height: 50%;*/
+/*    padding: 1rem;*/
+/*    border-radius: 1rem;*/
+/*}*/
 
 button:hover {
     background: var(--color-secondary);
