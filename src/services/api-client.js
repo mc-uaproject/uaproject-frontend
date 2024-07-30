@@ -1,7 +1,7 @@
 import axios from 'axios';
 
 const apiClient = axios.create({
-    baseURL: "http://localhost:8080/",
+    baseURL: "https://api.uaproject.xyz/",
     headers: {
         'Content-Type': 'application/json',
         'Access-Control-Allow-Origin': '*',
