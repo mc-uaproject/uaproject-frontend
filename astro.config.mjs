@@ -3,9 +3,12 @@ import react from '@astrojs/react';
 import icon from "astro-icon";
 import {defineConfig} from "astro/config";
 import starlight from '@astrojs/starlight';
+import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
     site: "https://uaproject.xyz",
+    output: 'server',
+    adapter: vercel(),
     integrations: [react(), tailwind(), icon(), starlight({
         title: 'Вікіпедія',
         locales: {
