@@ -6,7 +6,6 @@ import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
-    site: "https://uaproject.xyz",
     output: 'server',
     adapter: vercel(),
     integrations: [react(), tailwind(), icon(), starlight({
@@ -25,7 +24,7 @@ export default defineConfig({
         },
         sidebar: [{
             label: '📌 Інформація',
-            items: ['wiki/general/start', 'wiki/general/sponsorship', 'wiki/general/guestmode', 'wiki/general/gameroles', 'wiki/general/economy', 'wiki/general/features']
+            items: ['wiki/general/start', 'wiki/general/sponsorship', 'wiki/general/guestmode', 'wiki/general/gameroles', 'wiki/general/economy', 'wiki/general/emporium', 'wiki/general/features']
         }, {
             label: '👾 Посібники',
             items: ['wiki/guides/brewery', 'wiki/guides/towny', 'wiki/guides/magic', {
