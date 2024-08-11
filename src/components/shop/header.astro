@@ -6,6 +6,7 @@ import pfp from "../../assets/uaproject.png";
 import type { NavItem } from "../../types";
 
 const navItems: Array<NavItem> = [
+  {title: "Головна", url: "/"},
   { title: "Вікіпедія", url: "/wiki" },
   { title: "Крамниця", url: "/shop" },
   { title: "Анкета", url: "/form" },
@@ -45,7 +46,7 @@ const navItems: Array<NavItem> = [
       <Icon name="mdi:menu" class="size-8" />
     </button>
   </nav>
-  <div id="menu-modal" class="modal hidden" aria-hidden="true">
+  <div id="menu-modal-shop" class="modal hidden" aria-hidden="true">
     <div class="fixed inset-0 bg-default px-8 py-4 text-default">
       <div class="space-y-4" role="dialog" aria-modal="true">
         <header class="text-right">
@@ -80,7 +81,7 @@ const navItems: Array<NavItem> = [
   import MicroModal from "micromodal";
   import invariant from "tiny-invariant";
 
-  const menuModalId = "menu-modal";
+  const menuModalId = "menu-modal-shop";
 
   const header = document.querySelector("#page-header") as HTMLElement;
   const page = document.documentElement;

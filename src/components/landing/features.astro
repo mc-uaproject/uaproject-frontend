@@ -1,5 +1,4 @@
 ---
-// import { Icon } from "astro-icon/components";
 import {Image} from "astro:assets";
 import maintenance from "../../assets/maintenance.png";
 import community from "../../assets/community.png";
@@ -7,24 +6,30 @@ import features from "../../assets/features.png";
 import ContentSection from "../content-section.astro";
 ---
 
-<ContentSection title="Догляд" id="maintenance">
+<ContentSection title="Підтримка" id="maintenance">
     <div class="flex flex-col md:flex-row items-center justify-between">
         <div class="flex-1">
             <Fragment>
-                <p class="text-xl md:text-3xl font-bold mx-10 md:mx-20"> Ми ретельно слідкуємо за <span class="text-primary">роботою сервера</span>, тому баги та несправності швидко виправляються.
+                <p class="text-xl md:text-3xl font-bold mx-10 md:mx-20"> Ми ретельно слідкуємо за <span
+                        class="text-primary">роботою сервера</span>, тому баги та несправності швидко виправляються.
                     Ваша гра на сервері буде <span class="text-primary">комфортною</span> завжди! </p>
             </Fragment>
         </div>
-        <Image src={maintenance} alt="maintenance" class="w-8/12 md:w-4/12 my-4 md:my-0 mx-10 md:mx-40 flex align-text-bottom"/>
+        <Image src={maintenance} alt="maintenance"
+               class="w-8/12 md:w-4/12 my-4 md:my-0 mx-10 md:mx-40 flex align-text-bottom"/>
     </div>
 </ContentSection>
 
 <ContentSection title="Спільнота" id="community">
     <div class="flex flex-col md:flex-row items-center justify-between">
-        <Image src={community} alt="community" class="w-8/12 md:w-4/12 my-4 md:my-0 mx-10 md:mx-40 flex align-text-bottom"/>
+        <Image src={community} alt="community"
+               class="w-8/12 md:w-4/12 my-4 md:my-0 mx-10 md:mx-40 flex align-text-bottom"/>
         <div class="flex-1">
             <Fragment>
-                <p class="text-xl md:text-3xl font-bold mx-10 md:mx-20"> Гравці серверу <span class="text-primary">допомагають один одному</span> об'єднуються в міста, спілкуються щодня в нашому Discord сервері та отримують <span class="text-primary">неймовірний</span> досвід і <span class="text-primary">задоволення</span> від гри на сервері </p>
+                <p class="text-xl md:text-3xl font-bold mx-10 md:mx-20"> Гравці серверу <span class="text-primary">допомагають один одному</span>
+                    об'єднуються в міста, спілкуються щодня в нашому Discord сервері та отримують <span
+                            class="text-primary">неймовірний</span> досвід і <span
+                            class="text-primary">задоволення</span> від гри на сервері </p>
             </Fragment>
         </div>
     </div>
@@ -34,9 +39,13 @@ import ContentSection from "../content-section.astro";
     <div class="flex flex-col md:flex-row items-center justify-between">
         <div class="flex-1">
             <Fragment>
-                <p class="text-xl md:text-3xl font-bold mx-10 md:mx-20"> На сервері присутня механіка <span class="text-primary">кастомної генерації світу</span>, система поліції, власна система економіки, нові предмети, <span class="text-primary">магія</span> тa ще багато візуальних і ігрових доповнень. Гра на сервері буде цікава всім! </p>
+                <p class="text-xl md:text-3xl font-bold mx-10 md:mx-20"> На сервері присутня механіка <span
+                        class="text-primary">кастомної генерації світу</span>, система поліції, власна система
+                    економіки, нові предмети, <span class="text-primary">магія</span> тa ще багато візуальних і ігрових
+                    доповнень. Гра на сервері буде цікава всім! </p>
             </Fragment>
         </div>
-        <Image src={features} alt="features" class="w-8/12 md:w-4/12 my-4 md:my-0 mx-10 md:mx-40 flex align-text-bottom"/>
+        <Image src={features} alt="features"
+               class="w-8/12 md:w-4/12 my-4 md:my-0 mx-10 md:mx-40 flex align-text-bottom"/>
     </div>
 </ContentSection>
