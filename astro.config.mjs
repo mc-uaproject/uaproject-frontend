@@ -29,7 +29,11 @@ export default defineConfig({
             label: '👾 Посібники',
             items: ['wiki/guides/brewery', 'wiki/guides/towny', 'wiki/guides/magic', {
                 label: "Безмежжя",
-                items: ['wiki/guides/beyond/potions', 'wiki/guides/beyond/pathways', 'wiki/guides/beyond/advancing']
+                items: [
+                    'wiki/guides/beyond/potions',
+                    'wiki/guides/beyond/pathways',
+                    'wiki/guides/beyond/advancing',
+                    'wiki/guides/beyond/features']
             }]
         }]
     })]
