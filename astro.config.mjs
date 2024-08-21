@@ -6,34 +6,22 @@ import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
-    output: 'server',
-    adapter: vercel(),
-    integrations: [react(), tailwind(), icon(), starlight({
-        title: 'Вікіпедія',
-        locales: {
+    output: 'server', adapter: vercel(), integrations: [react(), tailwind(), icon(), starlight({
+        title: 'Вікіпедія', locales: {
             root: {
-                label: 'Українська',
-                lang: 'uk-UA'
+                label: 'Українська', lang: 'uk-UA'
             }
-        },
-        social: {
+        }, social: {
             discord: 'https://discord.gg/nyAMvRru7x'
-        },
-        logo: {
+        }, logo: {
             src: './src/icons/uaproject.svg'
-        },
-        sidebar: [{
+        }, sidebar: [{
             label: '📌 Інформація',
-            items: ['wiki/general/start', 'wiki/general/sponsorship', 'wiki/general/guestmode', 'wiki/general/gameroles', 'wiki/general/economy', 'wiki/general/emporium', 'wiki/general/features']
+            items: ['wiki/general/start', 'wiki/general/sponsorship', 'wiki/general/guestmode', 'wiki/general/gameroles', 'wiki/general/economy', 'wiki/general/emporium', 'wiki/general/cosmetics', 'wiki/general/features']
         }, {
-            label: '👾 Посібники',
-            items: ['wiki/guides/brewery', 'wiki/guides/towny', 'wiki/guides/magic', {
+            label: '👾 Посібники', items: ['wiki/guides/brewery', 'wiki/guides/towny', 'wiki/guides/magic', {
                 label: "Безмежжя",
-                items: [
-                    'wiki/guides/beyond/potions',
-                    'wiki/guides/beyond/pathways',
-                    'wiki/guides/beyond/advancing',
-                    'wiki/guides/beyond/features']
+                items: ['wiki/guides/beyond/potions', 'wiki/guides/beyond/pathways', 'wiki/guides/beyond/crafts', 'wiki/guides/beyond/advancing', 'wiki/guides/beyond/features']
             }]
         }]
     })]
