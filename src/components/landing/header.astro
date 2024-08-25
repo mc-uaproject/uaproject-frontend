@@ -47,7 +47,7 @@ const navItems: Array<NavItem> = [
             </button>
             <ThemeSwitcher/>
         </div>
-        <div id="menu-modal" class="modal hidden" aria-hidden="true">
+        <div id="menu-modal-index" class="modal hidden" aria-hidden="true">
             <div class="fixed inset-0 bg-default px-8 py-4 text-default">
                 <div class="space-y-4" role="dialog" aria-modal="true">
                     <header class="text-right">
@@ -86,10 +86,11 @@ const navItems: Array<NavItem> = [
     import MicroModal from "micromodal";
     import invariant from "tiny-invariant";
 
-    const menuModalId = "menu-modal";
+    const menuModalId = "menu-modal-index";
 
     const header = document.querySelector("#page-header") as HTMLElement;
     const page = document.documentElement;
+    const menuModal = document.querySelector(`#${menuModalId}`);
     const menu = document.querySelector(`#${menuModalId} ul`);
     const openNavButton = document.querySelector("#open-nav-button");
     const closeNavButton = document.querySelector("#close-nav-button");
@@ -101,12 +102,14 @@ const navItems: Array<NavItem> = [
 
     const openMenu = () => {
         MicroModal.show(menuModalId, {disableScroll: true});
-        console.log("openMenu");
+        menuModal.classList.remove("hidden");
+        menuModal.classList.remove("modal");
     };
 
     const closeMenu = () => {
         MicroModal.close(menuModalId);
-        console.log("closeMenu");
+        menuModal.classList.add("hidden");
+        menuModal.classList.add("modal");
     };
 
     openNavButton.addEventListener("click", openMenu);

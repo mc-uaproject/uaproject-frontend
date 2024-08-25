@@ -85,6 +85,7 @@ const navItems: Array<NavItem> = [
     const header = document.querySelector("#page-header") as HTMLElement;
     const page = document.documentElement;
     const menu = document.querySelector(`#${menuModalId} ul`);
+    const menuModal = document.querySelector(`#${menuModalId}`);
     const openNavButton = document.querySelector("#open-nav-button");
     const closeNavButton = document.querySelector("#close-nav-button");
 
@@ -95,10 +96,14 @@ const navItems: Array<NavItem> = [
 
     const openMenu = () => {
         MicroModal.show(menuModalId, {disableScroll: true});
+        menuModal.classList.remove("hidden");
+        menuModal.classList.remove("modal");
     };
 
     const closeMenu = () => {
         MicroModal.close(menuModalId);
+        menuModal.classList.add("hidden");
+        menuModal.classList.add("modal");
     };
 
     openNavButton.addEventListener("click", openMenu);
