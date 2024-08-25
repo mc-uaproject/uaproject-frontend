@@ -112,6 +112,7 @@ const Form: React.FC = () => {
                             <option value="ATLauncher">ATLauncher</option>
                             <option value="Void Launcher">Void Launcher</option>
                             <option value="Technic Launcher">Technic Launcher</option>
+                            <option value="Modrinth">Modrinth</option>
                             <option value="CurseForge">CurseForge</option>
                             <option value="SKLauncher">SKLauncher</option>
                             <option value="PollyMc">PollyMc</option>
@@ -158,8 +159,9 @@ const Form: React.FC = () => {
 
                     <div className="form-item full-width">
                         <label>
-                            Для того, щоб викопати яму, трьом чоловікам потрібно 5 годин. Скільки
-                            часу потрібно восьми чоловікам? Відповідь обґрунтуйте :)
+                            Якщо 5 котів можуть зловити 5 мишей за 5 хвилин,
+                            скільки часу знадобиться одному коту, щоб зловити одну мишу?
+                            Відповідь обґрунтуйте :)
                         </label>
                         <input {...register('tasks', {required: true})} />
                     </div>
