@@ -26,7 +26,8 @@ const Form: React.FC = () => {
         const processAuth = async () => {
             const urlParams = new URLSearchParams(window.location.search);
             const code = urlParams.get('code');
-            if (code) {
+            const storedDiscordId = localStorage.getItem('discord_id');
+            if (code && storedDiscordId == null) {
                 try {
                     const discordId = await authForm(code);
                     if (discordId != null) {
@@ -107,6 +108,7 @@ const Form: React.FC = () => {
                         <select {...register('launcher', {required: true})}>
                             <option value="Official Launcher">Minecraft Launcher</option>
                             <option value="Prism Launcher">Prism Launcher</option>
+                            <option value="Harmoniya Launcher">Harmoniya</option>
                             <option value="MultiMC">MultiMC Launcher</option>
                             <option value="GDLauncher">GDLauncher</option>
                             <option value="ATLauncher">ATLauncher</option>
