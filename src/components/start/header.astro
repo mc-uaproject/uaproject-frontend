@@ -9,8 +9,7 @@ const navItems: Array<NavItem> = [
     {title: "Головна", url: "/"},
     {title: "Вікіпедія", url: "/wiki"},
     {title: "Крамниця", url: "/shop"},
-    {title: "Як розпочати гру?", url: "/start"},
-    {title: "Анкета", url: "/form"},
+    {title: "Анкета 📍", url: "/form"},
     {title: "Discord", url: "https://discord.gg/uaproject", target: "_blank"}
 ];
 ---
@@ -30,7 +29,7 @@ const navItems: Array<NavItem> = [
             {
                 navItems.map(({title, url, target}) => (
                         <li key={url}>
-                            <a class="text-sm" href={url} target={target}>
+                            <a class="text-sm whitespace-nowrap" href={url} target={target}>
                                 {title}
                             </a>
                         </li>

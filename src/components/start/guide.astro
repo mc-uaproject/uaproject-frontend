@@ -1,0 +1,54 @@
+---
+import {Image} from "astro:assets";
+import gear from "../../assets/start/gear.gif";
+import emerald from "../../assets/start/emerald.gif";
+import players from "../../assets/start/players.gif";
+
+import ContentSection from "../start/content-section.astro";
+---
+
+<ContentSection title="1. Завантажити лаунчер" id="launcher">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex-1">
+            <Fragment>
+                <p class="text-xl md:text-2xl/relaxed font-bold mx-10 md:mx-20"> Завантажити наш власний лаунчер
+                    <a class="text-primary" href="https://www.harmoniya.net" target="_blank">Harmoniya (тиць <-)</a>, або будь-який інший <span class="text-secondary">
+                        НЕ РОСІЙСЬКИЙ </span> лаунчер. Лаунчери російського походження (TL, KL, TLegacy) категорично заборонені на сервері!
+                </p>
+            </Fragment>
+        </div>
+        <Image src={gear} alt="maintenance"
+               class="w-8/12 md:w-4/12 my-4 md:my-0 mx-5 md:mx-15 flex align-text-bottom"/>
+    </div>
+</ContentSection>
+
+<ContentSection title="2. Отримати допуск" id="qc">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+        <Image src={emerald} alt="community"
+               class="w-8/12 md:w-3/12 my-2 md:my-0 mx-10 md:mx-20 flex align-text-bottom"/>
+        <div class="flex-1">
+            <Fragment>
+                <p class="text-xl md:text-2xl/relaxed font-bold mx-10 md:mx-20">
+                    Придбати <a class="text-primary" href="https://donatello.to/fyzzzen?a=50&c=&m=Graylist" target="_blank"> моментальний допуск за 50₴</a>, або заповнити
+                    <a class="text-secondary" href="/form"> безкоштовну анкету </a>
+                    і дочекатися результатів перевірки на нашому <a class="text-primary" href="https://discord.gg/uaproject"> Discord сервері.</a> У вас буде лише одна спроба!
+                </p>
+            </Fragment>
+        </div>
+    </div>
+</ContentSection>
+
+<ContentSection title="3. Приєднатися до спільноти" id="players">
+    <div class="flex flex-col md:flex-row items-center justify-between">
+        <div class="flex-1">
+            <Fragment>
+                <p class="text-xl md:text-2xl/relaxed font-bold mx-10 md:mx-20"> Доєднатися до нашого
+                    <a class="text-primary" href="https://discord.gg/uaproject" target="_blank">Discord серверу</a>, щоб завжди бути в курсі <span class="text-secondary">
+                        актуальних новин, спойлерів, наборів та івентів </span>. Якщо у вас є питання, чи необхідна допомога, тех. підтримка також доступна на сервері!
+                </p>
+            </Fragment>
+        </div>
+        <Image src={players} alt="maintenance"
+               class="w-8/12 md:w-4/12 my-4 md:my-10 mx-5 md:mx-15 flex align-text-bottom"/>
+    </div>
+</ContentSection>
