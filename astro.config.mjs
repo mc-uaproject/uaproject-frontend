@@ -6,7 +6,9 @@ import starlight from '@astrojs/starlight';
 import vercel from '@astrojs/vercel/serverless';
 
 export default defineConfig({
-    output: 'server', adapter: vercel(), integrations: [react(), tailwind(), icon(), starlight({
+    output: 'server',
+    adapter: vercel({webAnalytics: {enabled: true}}),
+    integrations: [react(), tailwind(), icon(), starlight({
         title: 'Вікіпедія', locales: {
             root: {
                 label: 'Українська', lang: 'uk-UA'
