@@ -10,8 +10,8 @@ const navItems: Array<NavItem> = [
     {title: "Крамниця", url: "/shop"},
     {title: "Як розпочати гру?", url: "/start"},
     {title: "Анкета", url: "/form"},
-    {title: "Онлайн мапа", url: "https://map.uaproject.xyz", target: "_blank"},
-    {title: "Discord", url: "https://discord.gg/uaproject", target: "_blank"},
+    {title: "Онлайн мапа", url: "https://map.uaproject.xyz", target: "_blank", icon: "mdi:map"},
+    {title: "Discord", url: "https://discord.gg/uaproject", target: "_blank", icon: "discord"},
 ];
 ---
 
@@ -28,10 +28,10 @@ const navItems: Array<NavItem> = [
             <nav class="hidden sm:block">
                 <ul class="flex items-center gap-6">
                     {
-                        navItems.map(({title, url, target}) => (
+                        navItems.map(({icon, title, url, target}) => (
                                 <li>
-                                    <a class="text-sm" href={url} target={target}>
-                                        {title}
+                                    <a class="text-sm flex items-center gap-2" href={url} target={target}>
+                                        {icon ? <Icon name={icon} class="size-6" /> : title}
                                     </a>
                                 </li>
                         ))

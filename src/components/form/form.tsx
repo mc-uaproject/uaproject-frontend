@@ -55,7 +55,6 @@ const Form: React.FC = () => {
         processAuth();
     }, []);
 
-
     const redirectToDiscord = () => {
         const clientId = "1226236763975188550";
         const redirectUri = "https://uaproject.xyz/form";
@@ -202,7 +201,7 @@ const Form: React.FC = () => {
 
                 </div>
 
-                <button type="submit"> Зберегти і відправити</button>
+                <button className={"button"} type="submit"> Зберегти і відправити</button>
             </form>
         </>
 

@@ -9,14 +9,16 @@ const navItems: Array<NavItem> = [
     {title: "Головна", url: "/"},
     {title: "Вікіпедія", url: "/wiki"},
     {title: "Крамниця", url: "/shop"},
-    {title: "Анкета 📍", url: "/form"},
-    {title: "Discord", url: "https://discord.gg/uaproject", target: "_blank"}
+    {title: "Як розпочати гру?", url: "/start"},
+    {title: "Анкета", url: "/form"},
+    {title: "Онлайн мапа", url: "https://map.uaproject.xyz", target: "_blank", icon: "mdi:map"},
+    {title: "Discord", url: "https://discord.gg/uaproject", target: "_blank", icon: "discord"},
 ];
 ---
 
 <header
         id="page-header"
-        class="fixed top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 bg-default text-white"
+        class="fixed top-0 z-20 flex w-full items-center justify-between border-b border-transparent px-8 py-4 bg-default color-text"
 >
     <div class="flex items-center gap-3">
         <a class="flex items-center gap-3 hover:!text-default" href="/">
@@ -25,18 +27,17 @@ const navItems: Array<NavItem> = [
         </a>
     </div>
     <nav class="flex items-center gap-6">
-        <ul class="hidden sm:flex items-center gap-6">
+        <ul class="hidden sm:flex items-center gap-6 whitespace-nowrap">
             {
-                navItems.map(({title, url, target}) => (
-                        <li key={url}>
-                            <a class="text-sm whitespace-nowrap" href={url} target={target}>
-                                {title}
+                navItems.map(({icon, title, url, target}) => (
+                        <li>
+                            <a class="text-sm flex items-center gap-2" href={url} target={target}>
+                                {icon ? <Icon name={icon} class="size-6" /> : title}
                             </a>
                         </li>
                 ))
             }
         </ul>
-        <ThemeSwitcher/>
         <button
                 id="open-nav-button"
                 type="button"
@@ -45,6 +46,7 @@ const navItems: Array<NavItem> = [
         >
             <Icon name="mdi:menu" class="size-8"/>
         </button>
+        <ThemeSwitcher/>
     </nav>
     <div id="menu-modal-shop" class="modal hidden" aria-hidden="true">
         <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -84,7 +86,6 @@ const navItems: Array<NavItem> = [
     const menuModalId = "menu-modal-shop";
 
     const header = document.querySelector("#page-header") as HTMLElement;
-    const page = document.documentElement;
     const menu = document.querySelector(`#${menuModalId} ul`);
     const menuModal = document.querySelector(`#${menuModalId}`);
     const openNavButton = document.querySelector("#open-nav-button");

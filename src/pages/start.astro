@@ -1,9 +1,8 @@
 ---
 import "@fontsource-variable/inter";
-import Footer from "../components/landing/footer.astro";
-import Header from "../components/start/header.astro";
+import Footer from "../components/common/footer.astro";
+import Header from "../components/common/header.astro";
 import Guide from "../components/start/guide.astro";
-import "~/styles/form.css";
 import "~/styles/index.css";
 import Headline from "../components/shop/headline.astro";
 const {generator, site} = Astro;
@@ -57,7 +56,7 @@ const description = "Унікальний український Minecraft се�
 >
 <Header/>
 <div class="<space-y-5></space-y-5> px-8 py-32">
-    <Headline title={"Як почати гру на сервері❔"} subtitle={"Детальний гайд для новачків"}/>
+    <Headline title={"Як почати гру на сервері❔"} subtitle={"Коротенький вступ для новачків"}/>
     <Guide/>
 </div>
 <Footer/>
