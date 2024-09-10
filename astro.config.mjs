@@ -9,6 +9,7 @@ export default defineConfig({
     output: 'server',
     adapter: vercel({webAnalytics: {enabled: true}}),
     integrations: [react(), tailwind(), icon(), starlight({
+        disable404Route: true,
         title: 'Вікіпедія', locales: {
             root: {
                 label: 'Українська', lang: 'uk-UA'
@@ -19,7 +20,7 @@ export default defineConfig({
             src: './src/icons/uaproject.svg'
         }, sidebar: [{
             label: '📌 Інформація',
-            items: ['wiki/general/start', 'wiki/general/sponsorship', 'wiki/general/guestmode', 'wiki/general/gameroles', 'wiki/general/economy', 'wiki/general/emporium', 'wiki/general/cosmetics', 'wiki/general/features']
+            items: ['wiki/general/start', 'wiki/general/sponsorship', 'wiki/general/guestmode', 'wiki/general/gameroles', 'wiki/general/economy', 'wiki/general/emporium', 'wiki/general/cosmetics', 'wiki/general/features', 'wiki/general/additions']
         }, {
             label: '👾 Посібники', items: ['wiki/guides/brewery', 'wiki/guides/towny', 'wiki/guides/magic', {
                 label: "Безмежжя",
