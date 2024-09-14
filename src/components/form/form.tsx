@@ -78,6 +78,8 @@ const Form: React.FC = () => {
                 document.getElementById('successModal').showModal();
             } else {
                 console.error('Form submission failed');
+                localStorage.clear();
+                location.reload();
             }
         } catch (error) {
             console.error('Error submitting form:', error);
