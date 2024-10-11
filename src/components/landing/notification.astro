@@ -1,0 +1,122 @@
+---
+---
+
+<style>
+    .notification {
+        position: fixed;
+        display: none;
+        bottom: 20px;
+        right: 20px;
+        background-color: Canvas;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 16px;
+        width: 250px;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+
+    .notification.open {
+        height: auto;
+    }
+
+    .notification.closed {
+        height: 60px;
+        overflow: hidden;
+    }
+
+    .notification-header {
+        font-weight: bold;
+    }
+
+    .notification-content {
+        display: none;
+    }
+
+    .notification.open .notification-content {
+        display: block;
+        align-content: center;
+        margin-top: 10px;
+    }
+
+    .notification-description {
+        margin-bottom: 10px;
+        font-size: 14px;
+    }
+
+    .notification-button {
+        background-color: #007bff;
+        text-align: center;
+        color: white;
+        padding: 8px 12px;
+        border: none;
+        border-radius: 10px;
+        cursor: pointer;
+        text-decoration: none;
+    }
+
+    .show-notification {
+        display: block;
+    }
+
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+    @keyframes smooth-appear {
+        to {
+            bottom: 20px;
+            opacity: 1;
+        }
+    }
+
+    @keyframes smooth-disappear {
+        to {
+            bottom: -100%;
+            opacity: 0;
+        }
+    }
+
+    @media (max-width: 768px) {
+        .notification {
+            left: 50%;
+            transform: translateX(-50%);
+            width: 90%;
+            right: auto;
+        }
+    }
+
+    .container {
+        bottom: -100%;
+        animation: smooth-appear 1s ease forwards;
+    }
+</style>
+
+<div class="notification container closed --color-primary" id="notification">
+
+    <h2 class="text-base notification-header">🚀 Набір в команду!</h2>
+
+    <div class="notification-content">
+        <div class="notification-description">
+            <p> Наразі на сервері проходить набір у команду проєкта. Дізнатися більше можна за посиланням нижче.</p>
+            <br>
+            <p> Актуально навіть для новачків! </p>
+        </div>
+        <div class="notification-button"><a href="https://dyno.gg/form/3f1bb5ad" target="_blank" class="notification-button">Перейти</a>
+        </div>
+    </div>
+</div>
+
+<script>
+    document.querySelector('#notification').addEventListener('click', function () {
+        this.classList.toggle('open');
+        this.classList.toggle('closed');
+    });
+</script>
+
+<style>
+    :global(.fixed-header) #theme-switcher {
+        @apply ml-0 scale-100;
+    }
+</style>

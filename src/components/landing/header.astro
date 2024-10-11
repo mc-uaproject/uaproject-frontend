@@ -4,6 +4,7 @@ import {Image} from "astro:assets";
 import pfp from "../../assets/uaproject.png";
 import ThemeSwitcher from "../theme-switcher.astro";
 import type {NavItem} from "../../types";
+import Notification from "./notification.astro";
 
 const navItems: Array<NavItem> = [
     {title: "Вікіпедія", url: "/wiki"},
@@ -11,7 +12,7 @@ const navItems: Array<NavItem> = [
     {title: "Як розпочати гру?", url: "/start"},
     {title: "Анкета", url: "/form"},
     {title: "Онлайн мапа", url: "https://map.uaproject.xyz", target: "_blank", icon: "mdi:map"},
-    {title: "Discord", url: "https://discord.gg/uaproject", target: "_blank", icon: "discord"},
+    {title: "Discord", url: "https://discord.gg/nyAMvRru7x", target: "_blank", icon: "discord"},
 ];
 ---
 
@@ -31,7 +32,8 @@ const navItems: Array<NavItem> = [
                         navItems.map(({icon, title, url, target}) => (
                                 <li>
                                     <a class="text-sm flex items-center gap-2" href={url} target={target}>
-                                        {icon ? <Icon name={icon} class="size-6" /> : title}
+                                        {icon ?
+                                                <Icon name={icon} class="size-6"/> : title}
                                     </a>
                                 </li>
                         ))
@@ -47,6 +49,7 @@ const navItems: Array<NavItem> = [
                 <Icon name="mdi:menu" class="size-8"/>
             </button>
             <ThemeSwitcher/>
+            <Notification id="notification"/>
         </div>
         <div id="menu-modal-index" class="modal hidden" aria-hidden="true">
             <div class="fixed inset-0 bg-default px-8 py-4 text-default">
@@ -118,7 +121,15 @@ const navItems: Array<NavItem> = [
 
     document.addEventListener("scroll", () => {
         const d = page.clientHeight - page.scrollTop - header.offsetHeight;
-        header.classList.toggle("fixed-header", d < 0);
+        const shouldShowFixedHeader = d < 0;
+        header.classList.toggle("fixed-header", shouldShowFixedHeader);
+        const notificationElement = document.getElementById("notification");
+
+        if (notificationElement) {
+            notificationElement.classList.toggle("show-notification", shouldShowFixedHeader);
+        } else {
+            console.error("notificationElement is null");
+        }
     });
 
     menu.addEventListener("click", (event) => {

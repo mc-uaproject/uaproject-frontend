@@ -20,7 +20,7 @@
 }
 
 .full-width {
-    grid-column: span 2; /* Adjust based on how many columns you want it to span */
+    grid-column: span 2;
 }
 
 label {
@@ -57,28 +57,3 @@ select {
     cursor: pointer;
     transition: background-color 0.3s ease;
 }
-
-/*!*.modal-overlay {*!*/
-/*!*    z-index: 9999;*!*/
-/*!*    width: 100vw;*!*/
-/*!*    height: 100vh;*!*/
-/*!*    position: absolute;*!*/
-/*!*    top: 0;*!*/
-/*!*    background: rgba(0, 0, 0, 0.7);*!*/
-/*!*    display: flex;*!*/
-/*!*    justify-content: center;*!*/
-/*!*    align-items: center;*!*/
-/*!*}*!*/
-
-/*!*.modal-box {*!*/
-/*!*    display: block;*!*/
-/*!*    background: white;*!*/
-/*!*    width: 70%;*!*/
-/*!*    height: 50%;*!*/
-/*!*    padding: 1rem;*!*/
-/*!*    border-radius: 1rem;*!*/
-/*!*}*!*/
-
-/*button:hover {*/
-/*    background: var(--color-secondary);*/
-/*}*/
